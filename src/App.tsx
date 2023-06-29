@@ -1,3 +1,4 @@
+import Alert from './components/Alert';
 import ListGroup from './components/ListGroup';
 
 function App() {
@@ -9,6 +10,11 @@ function App() {
 
   return (
     <div>
+      {/* Alert component that accepts children dynamically */}
+      <Alert>
+        Hello <span className="fw-bold">World</span>!
+      </Alert>
+      {/* List group with rendering lists, conditional rendering, state, props and child-to-parent communication */}
       <ListGroup
         items={items}
         heading="Cities"
