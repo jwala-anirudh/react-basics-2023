@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Alert from './components/Alert';
 import Button from './components/Button';
 import ListGroup from './components/ListGroup';
+import ExpandableText from './components/ExpandableText';
 
 const App = () => {
   const items = ['New York', 'San Fracisco', 'Tokyo', 'London', 'Paris'];
@@ -41,6 +42,21 @@ const App = () => {
         <Alert onClose={() => setAlertVisible(false)}>My alert</Alert>
       )}
       <Button onClick={() => setAlertVisible(true)}>My Button</Button>
+
+      {/* Expand-able text */}
+      <ExpandableText maxChars={90}>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi
+        obcaecati quibusdam suscipit. Nostrum iure ratione provident, architecto
+        autem aliquam vero in ipsam voluptatem nisi exercitationem quos labore
+        voluptates impedit veniam. Quia officia fugit porro iure earum nostrum,
+        odio molestiae saepe aspernatur laboriosam consequuntur odit unde sit
+        quidem sint, vitae neque temporibus dolorem reprehenderit placeat
+        assumenda incidunt ipsum quos! Voluptas totam ipsam quae possimus
+        tenetur enim unde ratione nam ex facere dolore doloremque, dicta nostrum
+        repellendus molestiae ipsum. Repellat est natus eum inventore quisquam,
+        rerum explicabo exercitationem quis dolores officia! Ipsa odit veritatis
+        ducimus debitis! Possimus quo sapiente cupiditate accusamus facere?
+      </ExpandableText>
     </div>
   );
 };
