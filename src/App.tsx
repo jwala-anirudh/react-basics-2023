@@ -83,7 +83,7 @@ const App = () => {
           }
         />
       </div>
-      <div className="mt-3 md-3">
+      <div className="mt-3 mb-3">
         <ExpenseFilter
           onSelectCategory={category => setSelectedCategory(category)}
         />
