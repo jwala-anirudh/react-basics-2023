@@ -1,5 +1,7 @@
+import Networking from './networking/Networking';
+
 const App = () => {
-  return <></>;
+  return <Networking />;
 };
 
 export default App;
