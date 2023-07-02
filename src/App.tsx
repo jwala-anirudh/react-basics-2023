@@ -8,8 +8,7 @@ import Form from './components/Form';
 import ExpenseList, { Expense } from './expense-tracker/components/ExpenseList';
 import ExpenseFilter from './expense-tracker/components/ExpenseFilter';
 import ExpenseForm from './expense-tracker/components/ExpenseForm';
-
-export const categories = ['Groceries', 'Utilities', 'Entertainment'];
+import categories from './expense-tracker/categories';
 
 const App = () => {
   const items = ['New York', 'San Fracisco', 'Tokyo', 'London', 'Paris'];
@@ -72,7 +71,17 @@ const App = () => {
       <Form />
 
       <div className="mb-5 mt-3">
-        <ExpenseForm />
+        <ExpenseForm
+          onSubmit={expense =>
+            setExpenses([
+              ...expenses,
+              {
+                ...expense,
+                id: expenses.length + 1
+              }
+            ])
+          }
+        />
       </div>
       <div className="mt-3 md-3">
         <ExpenseFilter
