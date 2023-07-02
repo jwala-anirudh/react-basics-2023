@@ -6,11 +6,16 @@ import ListGroup from './components/ListGroup';
 import ExpandableText from './components/ExpandableText';
 import Form from './components/Form';
 import ExpenseList, { Expense } from './expense-tracker/components/ExpenseList';
+import ExpenseFilter from './expense-tracker/components/ExpenseFilter';
 
 const App = () => {
   const items = ['New York', 'San Fracisco', 'Tokyo', 'London', 'Paris'];
   const [alertVisible, setAlertVisible] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('');
   const [expenses, setExpenses] = useState<Expense[]>([]);
+  const visibleExpenses = selectedCategory
+    ? expenses.filter(e => e.category === selectedCategory)
+    : expenses;
 
   const handleSelectItem = (item: string) => {
     console.log(item);
@@ -63,8 +68,13 @@ const App = () => {
 
       <Form />
 
+      <div className="mt-3 md-3">
+        <ExpenseFilter
+          onSelectCategory={category => setSelectedCategory(category)}
+        />
+      </div>
       <ExpenseList
-        expenses={expenses}
+        expenses={visibleExpenses}
         onDelete={id => setExpenses(expenses.filter(e => e.id !== id))}
       />
     </div>
