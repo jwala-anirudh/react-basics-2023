@@ -5,10 +5,12 @@ import Button from './components/Button';
 import ListGroup from './components/ListGroup';
 import ExpandableText from './components/ExpandableText';
 import Form from './components/Form';
+import ExpenseList, { Expense } from './expense-tracker/components/ExpenseList';
 
 const App = () => {
   const items = ['New York', 'San Fracisco', 'Tokyo', 'London', 'Paris'];
   const [alertVisible, setAlertVisible] = useState(false);
+  const [expenses, setExpenses] = useState<Expense[]>([]);
 
   const handleSelectItem = (item: string) => {
     console.log(item);
@@ -60,6 +62,11 @@ const App = () => {
       </ExpandableText>
 
       <Form />
+
+      <ExpenseList
+        expenses={expenses}
+        onDelete={id => setExpenses(expenses.filter(e => e.id !== id))}
+      />
     </div>
   );
 };
