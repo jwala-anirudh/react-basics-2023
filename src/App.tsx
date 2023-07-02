@@ -4,6 +4,7 @@ import Alert from './components/Alert';
 import Button from './components/Button';
 import ListGroup from './components/ListGroup';
 import ExpandableText from './components/ExpandableText';
+import Form from './components/Form';
 
 const App = () => {
   const items = ['New York', 'San Fracisco', 'Tokyo', 'London', 'Paris'];
@@ -57,6 +58,8 @@ const App = () => {
         rerum explicabo exercitationem quis dolores officia! Ipsa odit veritatis
         ducimus debitis! Possimus quo sapiente cupiditate accusamus facere?
       </ExpandableText>
+
+      <Form />
     </div>
   );
 };
